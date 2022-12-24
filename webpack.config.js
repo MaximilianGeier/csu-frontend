@@ -21,6 +21,26 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.less$/,
+                use: [
+                    {
+                      loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: {
+                                localIdentName: "[name]__[local]___[hash:base64:5]",
+                            },														
+                            sourceMap: true
+                        }
+                    },
+                    {
+                      loader: "less-loader"
+                    }
+                ]
+            },
+            {
                 test: /\.[j|t]sx?$/,
                 exclude: /node_modules/,
                 resolve: {
