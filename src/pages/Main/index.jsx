@@ -1,6 +1,4 @@
-import React from 'react';
-
-import cat from '@Assets/images/cat.jpg';
+import React, { useState } from 'react';
 
 import calcIcon from '@Assets/images/calc-icon.png';
 import courierIcon from '@Assets/images/courier-icon.png';
@@ -13,11 +11,31 @@ import logo from '@Assets/images/logo.svg';
 import style from './styles.module.less';
 import Header from '@Components/header/header';
 import Tile from '@Components/tile/tile';
+import Authorization from '@Components/authorization/Authorization';
+import Button from '@Components/button/button';
 
-const Main = () => (
+const Main = () => {
+    const [open, setOpen] = useState(false);
+    return (
     <div className={style.main}>
+        {open ? <Authorization closePopup={() => setOpen(false)}/> : null}
         <div className={style.view}>
-            <Header/>
+            <Header
+                openPopup = {() => setOpen(true)}/>
+            <div className="container">
+                <div className={style.slider}>
+                    <h1 className={style['slider-title']}>
+                        Срочная доставка день в день
+                    </h1>
+                    <p className={style['slider-text']}>
+                        Для тех, кто не может ждать у нас есть услуга срочной курьерской 
+                        доставки корреспондеции и других видов отправлений.
+                    </p>
+                    <div className={style['slider-btn']}>
+                        <Button text='Заказать доставку'/>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <h2>5 шагов к заявке</h2>
@@ -84,16 +102,16 @@ const Main = () => (
                             <p>manager@uexpress.ru</p>
                         </div>
                         <div>
-                            <p>115221, г. Челябинск, ул. Северная, д. 29-в</p>
+                            <p>115221, г. Челябинск, ул. <br /> Северная, д. 29-в</p>
                         </div>
                         <div>
-                            <p>Мы работаем по 24 часа 5 дней в неделю</p>
+                            <p>Мы работаем по 24 часа <br /> 5 дней в неделю</p>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-);
+)};
 
 export default Main;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Main from '@Pages/Main';
-import NotFound from '@Pages/NotFound/NotFound';
+import NotFound from '@Pages/NotFound/notFound';
 
 const App = () => {
     return (

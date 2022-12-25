@@ -4,7 +4,7 @@ import style from './header-style.module.less';
 import logo from '@Assets/images/logo.svg';
 import phone from '@Assets/images/phone_img.svg';
 
-const Header = () => (
+const Header = (props) => (
     <div>
         <div className="container">
             <header className={style.header}>
@@ -22,7 +22,7 @@ const Header = () => (
                         <img src={phone} alt="phone image" />
                         <a href="tel:+79090231251">8 (909) 023-12-51</a>
                     </div>
-                    <button>Вход</button>
+                    <button onClick={props.openPopup}>Вход</button>
                 </div>
             </header>
         </div>
