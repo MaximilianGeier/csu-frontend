@@ -3,4 +3,10 @@
 body {
     font-family: 'Proxima Nova';
     font-weight: 400;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto 0 auto;
 }

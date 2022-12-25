@@ -1,0 +1,35 @@
+@font-color: #A9C5E0;
+@yellow: #E5E31F;
+
+.header {
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  color: @font-color;
+}
+
+.header_right, .header_left{
+  gap: 30px;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-items:center;
+
+  .header_phone a{
+    text-decoration: none;
+    color: @font-color;
+    padding-left: 12px;
+  }
+  button{
+    background-color: rgba(42, 42, 42, 0);
+    border: 1px solid @yellow;
+    border-radius: 10px;
+    padding: 15px 65px;
+    color: @yellow;
+  }
+}
+
+.header_line{
+  border-left: 1px solid @font-color;
+  height: 18px;
+}
