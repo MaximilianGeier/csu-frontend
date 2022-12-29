@@ -30,30 +30,26 @@ const Carousel = (props) => {
             setCurrentSlide(slide);
         }
     }
-    
-    async function endlessAnimation() {
-        while (true) {
-            await new Promise(resolve => setTimeout(() => {
-                nextSlide();
-            }, 4000));
-        }
-      }
 
-      const nextSlide = () => {
-        if(previouSlide === 0){
-            if(currentSlide < props.obj.length){
-                setCurrentSlide(currentSlide + 1)
-            }else{
-                setCurrentSlide(1)
-            }
-        }
-        setPreviouSlide(0)
-      }
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            nextSlide();
+        }, 4500);
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, [currentSlide]);
 
-      useEffect(() => {
-        endlessAnimation();
-      });
-      
+    const nextSlide = () => {
+      if(previouSlide === 0){
+          if(currentSlide < props.obj.length){
+              setCurrentSlide(currentSlide + 1)
+          }else{
+              setCurrentSlide(1)
+          }
+      }
+      setPreviouSlide(0)
+    }
 
     return (
         <div className={style.slides}>

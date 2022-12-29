@@ -3,15 +3,23 @@
 @font-btn-color: #2A4F71;
 @font-blue: #2A496B;
 @font-white: #FFFFFF;
+@font-red: #FF2323;
 @font-gray: #A9C5E0;
 
 .default-btn{
     background-color: @yellow;
     color: @font-btn-color;
     border-radius: 10px;
-    border: none;
     padding: 15px 42px;
     font-weight: 600;
     font-size: 18px;
     text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.5s ease;
+
+    &:hover{
+        background-color: rgba(42, 42, 42, 0);
+        color: @yellow;
+        border: 2px solid @yellow;
+    }
 }

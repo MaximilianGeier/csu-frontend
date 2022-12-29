@@ -14,18 +14,18 @@ const Authorization = (props) => {
                     onClick={props.closePopup}
                     src={closeIcon}
                     alt="закрыть" />
-                <div className={style['popup-title']}>
+                <div className={style['popup__title']}>
                     Авторизация
                 </div>
-                <div className={style['popup-text']}>
+                <div className={style['popup__text']}>
                     Введите логин и пароль, чтобы войти в личный кабинет
                 </div>
-                <form>
+                <form method='get'>
                     <input 
                         className={style['form-item']}
                         type="text"
                         name="username"
-                        maxLength="15"
+                        maxLength="30"
                         minLength="4"
                         pattern="^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$"
                         id="username"

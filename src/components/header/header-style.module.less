@@ -1,11 +1,35 @@
-@font-color: #A9C5E0;
-@yellow: #E5E31F;
+@import "@Styles/consts.less";
 
 .header {
   padding-top: 25px;
   display: flex;
   justify-content: space-between;
-  color: @font-color;
+  color: @font-gray;
+
+  &__line{
+    border-left: 1px solid @font-gray;
+    height: 18px;
+  }
+
+  &__phone a{
+    text-decoration: none;
+    color: @font-gray;
+    padding-left: 12px;
+  }
+
+  button{
+    background-color: rgba(42, 42, 42, 0);
+    border: 1px solid @yellow;
+    border-radius: 10px;
+    padding: 15px 65px;
+    color: @yellow;
+    transition: all 0.3s ease;
+    
+    &:hover{
+      background-color: #E5E31F;
+      color: @font-btn-color;
+    }
+  }
 }
 
 .header_right, .header_left{
@@ -14,22 +38,23 @@
   flex-direction: row;
   align-self: center;
   align-items:center;
+}
 
-  .header_phone a{
-    text-decoration: none;
-    color: @font-color;
-    padding-left: 12px;
+@media (max-width: 1400px) {
+  .header_right{
+    flex-direction: column-reverse;
   }
-  button{
-    background-color: rgba(42, 42, 42, 0);
-    border: 1px solid @yellow;
-    border-radius: 10px;
-    padding: 15px 65px;
-    color: @yellow;
+
+  .header_left{
+    transform: translateY(-25px);
   }
 }
 
-.header_line{
-  border-left: 1px solid @font-color;
-  height: 18px;
+@media (max-width: 530px) {
+  .header__line, .header__text, .header__phone{
+    display: none;
+  }
+  .header_left{
+    transform: translateY(0);
+  }
 }

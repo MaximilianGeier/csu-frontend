@@ -1,9 +1,4 @@
-
 @import "@Styles/consts.less";
-.main_page__cat_img {
-    width: 300px;
-    height: auto;
-}
 
 .preview{
     background: radial-gradient(75.49% 75.49% at 61.01% 75.77%, #376A9A 0%, #2B5276 100%);
@@ -24,29 +19,18 @@
     justify-content: center;
     gap: 115px 30px;
     align-items: flex-end;
+    margin-bottom: 140px;
 }
 
-.footer{
-    background-color: @blue;
-    padding: 87px 0;
-    margin-top: 140px;
-    color: @font-white;
 
-    .wrapper{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+
+@media (max-width: 1400px) {
+    .footer__container{
+        padding-right: 50px;
+        flex-direction: column;
     }
 
-    &__column div{
-        margin-bottom: 20px;
-    }
-
-    &__column-contact{
-        color: @font-gray;
-        div{
-            margin-bottom: 20px;
-        }
+    .footer__wrapper{
+        justify-content: space-around;
     }
 }

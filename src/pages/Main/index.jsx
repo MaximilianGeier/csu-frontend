@@ -6,15 +6,13 @@ import dataIcon from '@Assets/images/main/data-icon.png';
 import pactIcon from '@Assets/images/main/pact-icon.png';
 import payIcon from '@Assets/images/main/pay-icon.png';
 
-import logo from '@Assets/images/logo.svg';
-
 import style from './styles.module.less';
-import Header from '@Components/header/header';
 import Tile from '@Components/tile/tile';
-import Authorization from '@Components/authorization/Authorization';
 import car from '@Assets/images/preview/car.png'
 import blank from '@Assets/images/preview/blank.png'
 import Carousel from '@Components/carousel/carousel';
+import Authorization from '@Components/authorization/Authorization';
+import Header from '@Components/header/header';
 
 const sliderList = [{title: 'Срочная доставка день в день',
                 text: 'Для тех, кто не может ждать у нас есть услуга срочной курьерской доставки корреспондеции и других видов отправлений.',
@@ -25,14 +23,12 @@ const sliderList = [{title: 'Срочная доставка день в ден�
 
 const Main = () => {
     const [open, setOpen] = useState(false);
-
     return (
         <div className={style.main}>
             {open ? <Authorization closePopup={() => setOpen(false)}/> : null}
             <div className={style.preview}>
-                <Header
-                    openPopup = {() => setOpen(true)}/>
                 <div className="container">
+                    <Header openPopup = {() => setOpen(true)}/>
                     <Carousel obj={sliderList}/>
                 </div>
             </div>
@@ -67,49 +63,6 @@ const Main = () => {
                         imgSrc={dataIcon}/>
                 </div>
             </div>
-            <footer className={style['footer']}>
-                <div className="container">
-                    <div className={style['wrapper']}>
-                        <img src={logo} alt="лого" />
-                        <div className={style.footer__column}>
-                            <div>
-                                <p>О компании</p>
-                            </div>
-                            <div>
-                                <p>Вакансии</p>
-                            </div>
-                            <div>
-                                <p>Клиенту</p>
-                            </div>
-                            <div>
-                                <p>Франчайзинг</p>
-                            </div>
-                        </div>
-                        <div className={style.footer__column}>
-                            <div>
-                                <p>Доставка из Китая</p>
-                            </div>
-                            <div>
-                                <p>Все услуги</p>
-                            </div>
-                            <div>
-                                <p>Акции</p>
-                            </div>
-                        </div>
-                        <div className={style['footer__column', 'footer__column-contact']}>
-                            <div>
-                                <p>manager@uexpress.ru</p>
-                            </div>
-                            <div>
-                                <p>115221, г. Челябинск, ул. <br /> Северная, д. 29-в</p>
-                            </div>
-                            <div>
-                                <p>Мы работаем по 24 часа <br /> 5 дней в неделю</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     )
 };

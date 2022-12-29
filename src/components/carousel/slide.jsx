@@ -30,19 +30,17 @@ const Slide = ({maxIndex, index, currentSlide, previousSLide, title, text, imgSr
     }
     }, [currentSlide])
     return(
-    <div onTransitionEnd={() => setFastTransition()} style={{transform: translate}} className={style['slide'] + ' ' + style[animationState]}>
-        <div className={style['slider']}>
-            <div className={style['slider__content']}>
-                <h1 className={style['slider-title']}>
-                    {title}
-                </h1>
-                <p className={style['slider-text']}>
-                    {text}
-                </p>
-                <button className={style['slider-btn']}>Заказать доставку</button>
-            </div>
-            <img src={imgSrc} alt="Заставка" />
+    <div style={{transform: translate}} className={style['slide'] + ' ' + style[animationState]}>
+        <div className={style['slide__content']}>
+            <h1 className={style['slide__title']}>
+                {title}
+            </h1>
+            <p className={style['slide__text']}>
+                {text}
+            </p>
+            <button className={style['slide__btn']}>Заказать доставку</button>
         </div>
+        <img src={imgSrc} alt="Заставка" />
     </div>
 )};
 

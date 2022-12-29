@@ -1,0 +1,55 @@
+@import "@Styles/consts.less";
+
+.footer{
+    background-color: @blue;
+    padding: 87px 0;
+
+    a{
+        color: @font-white;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: @font-gray;
+    }
+
+
+    &__container{
+        display: flex;
+        flex-direction: row;
+        gap: 10vw;
+    }
+
+    .wrapper{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 50px;
+        width: 100%;
+    }
+
+    &__column div{
+        margin-bottom: 20px;
+    }
+
+    &__column-contact{
+        color: @font-gray;
+        div{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 530px) {
+    .footer{
+        &__container{
+            flex-direction: column;
+        }
+
+        .wrapper{
+            margin-right: 30px;
+        }
+    }
+}

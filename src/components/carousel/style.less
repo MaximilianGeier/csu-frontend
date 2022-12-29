@@ -1,46 +1,40 @@
 @import "@Styles/consts.less";
 
-.slider{
+.slides{
+    width: 100vh;
+}
+
+.slide{
   max-width: 1200px;
   height: calc(100vh - 123px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-self: flex-end;
+  position: absolute;
+  bottom: 20px;
 
 
-  &-title{
+  &__title{
       font-weight: 800;
       font-size: 4.15vw;
       color: @font-white;
-      margin: 195px 0 18px 0;
+      margin: 30vh 0 18px 0;
   }
-  &-text{
+  &__text{
       color: @font-white;
       font-size: 16px;
-      margin-bottom: 85px;
+      margin-bottom: 5vw;
       line-height: 24px;
   }
 
-  &-btn{
+  &__btn{
     .default-btn();
-    width: 250px;
   }
 
   img{
     transform: translateY(20px);
   }
-}
-
-.btn{
-    position:absolute;
-    top: 90vh;
-    left: 50%;
-    transform: translateX(-50%);
-
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
 }
 
 .markers{
@@ -53,10 +47,6 @@
     transform: translateX(-50%);
 }
 
-.slide{
-  position: absolute;
-  margin-top: 30px;
-}
 .anim_1{
     animation-duration: 1s;
     animation-iteration-count: 1;
@@ -122,5 +112,35 @@
   
     to {
         transform: translateX(120%);
+    }
+}
+
+@media (max-width: 1400px) {
+    .slide {
+        &__btn, img{
+            display: none;
+        }
+
+        &__title{
+            font-size: 64px;
+            margin-top: 20vh;
+        }
+        
+    }   
+}
+
+@media (max-width: 530px) {
+    .slide__btn{
+      display: block;
+    }
+
+    .slide__btn{
+        margin: 40px auto 0 auto;
+        width: 80%;
+    }
+
+    .slide__title{
+        font-size: 35px;
+        margin-top: 5vh;
     }
 }
